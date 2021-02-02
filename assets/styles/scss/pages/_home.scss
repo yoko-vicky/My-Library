@@ -1,0 +1,32 @@
+.container {
+  text-align: center;
+}
+
+.form {
+  display: none;
+  width: 94%;
+  max-width: 40rem;
+  margin: 3rem auto;
+  padding: 2rem 0;
+
+  &__field {
+    margin-bottom: 2rem;
+
+    label {
+      display: block;
+      font-weight: bold;
+    }
+
+    input {
+      display: block;
+      width: 100%;
+      border-radius: 3px;
+      border: 3px solid $light-grey-1;
+      padding: 1rem;
+    }
+  }
+
+  &.open {
+    display: block;
+  }
+}

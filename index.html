@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/styles/css/normalize.css">
+  <link rel="stylesheet" href="./assets/styles/css/styles.css">
+  <title>My Library</title>
+</head>
+<body>
+  <div class="container">
+    <h1>My Library</h1>
+
+    <table class="books">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Published year</th>
+          <th>Read status</th>
+          <th>remove</th>
+        </tr>
+      </thead>
+      <tbody id="books_body">
+        <tr>
+          <td>Find Nimo</td>
+          <td>Mr.Nimonimo</td>
+          <td>2011</td>
+          <td>true</td>
+          <td><button type="button" data-target="99" class="remove-btn">remove</button></td>
+        </tr>
+        <!-- <tr>
+          <td>Find Nimo</td>
+          <td>Mr.Nimonimo</td>
+          <td>2011</td>
+        </tr> -->
+      </tbody>
+    </table>
+
+    <button id="new_book">New Book</button>
+
+    <form id="add_form" class="form">
+      <div class="form__field">
+        <label for="title">Title</label>
+        <input type="text" placeholder="Find Nimo!" name="title" id="title">
+      </div>
+
+      <div class="form__field">
+        <label for="author">Author</label>
+        <input type="text" placeholder="Captain Nimo" name="author" id="author">
+      </div>
+
+      <div class="form__field">
+        <label for="year">Year</label>
+        <input type="number" placeholder="1900" name="year" id="year" min="1000" max="2021">
+      </div>
+
+      <div class="form__field">
+        <label for="status">Have you read?</label>
+        <input type="checkbox" name="status" id="status">
+      </div>
+
+      <button type="submit">Add to Library</button>
+    </form>
+
+  </div>
+  <script src="./assets/scripts/app.js"></script>
+</body>
+</html>
