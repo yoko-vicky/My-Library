@@ -1,26 +1,13 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 # PROJECTTITLE
-![Top Page Screenshot](./screenshot.png)
-
 
 ## About the Project
 
-This project is based on ...
+This project is based on [the Odin Project](https://www.theodinproject.com/courses/javascript/lessons/library) for the purpose of my own learning JavaScript. 
+I created a Book constructor function and add other functions.
+Also, I used local storage to save books' data and get saved data from it.
 
 A list of commonly used resources that I find helpful is listed in the acknowledgments.
-
-
-## Table of Contents
-
-* [About the Project](#about-the-project)
-* [Built With](#built-with)
-* [Live Demo](#live-demo)
-* [Getting Started](#getting-started)
-* [Authors](#authors)
-* [Contributing](#contributing)
-* [Show your support](#show-your-support)
-* [License](#license)
-* [Acknowledgements](#acknowledgements)
 
 ## Built With
 
@@ -30,7 +17,7 @@ A list of commonly used resources that I find helpful is listed in the acknowled
 
 ## Live Demo
 
-[Live Demo Link](https://yocosaka.github.io)
+[Live Demo Link](https://yocosaka-my-library.netlify.app/)
 
 
 ## Getting Started
@@ -47,13 +34,7 @@ e.g. $ git clone https://github.com/yourUsername/yourProjectName
 7. Press Enter. Your local copy will be created. 
 
 
-## Authors
-
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/linkedinhandle)
+## Author
 
 👤 **Yoko Saka**
 
@@ -85,6 +66,4 @@ This project is [MIT](./LICENSE) licensed.
 
 
 ## Acknowledgements
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Img Shields](https://shields.io)
-* [Choose an Open Source License](https://choosealicense.com)
+* [the Odin Project](https://www.theodinproject.com/courses/javascript/lessons/library)
