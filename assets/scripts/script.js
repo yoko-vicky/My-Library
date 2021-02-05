@@ -5,15 +5,6 @@ function Book(title, author, year, status = false) {
   this.year = year;
   this.status = status;
 }
-function addBookToLibrary(book, library) {
-  book = {
-    title: book.title,
-    author: book.author,
-    year: book.year,
-    status: book.status,
-  };
-  library.push(book);
-}
 function bookStatus(book) {
   return book.status === true ? 'Read Already' : 'Not yet';
 }
@@ -40,7 +31,6 @@ function displayBooks(library) {
   const rmBtns = document.querySelectorAll('.remove-btn');
   rmBtns.forEach(btn => {
     btn.addEventListener('click', e => {
-      e.preventDefault();
       library.splice(e.target.getAttribute('data-target'), 1);
       displayBooks(library);
     });
@@ -50,11 +40,14 @@ function displayBooks(library) {
   const swBtns = document.querySelectorAll('.swicth-btn');
   swBtns.forEach(btn => {
     btn.addEventListener('click', e => {
-      e.preventDefault();
       changeStatus(e.target.getAttribute('data-target'), library);
       displayBooks(library);
     });
   });
+}
+
+function addBookToLibrary(book, library) {
+  library.push(book);
 }
 
 //  RUNNING =======================================
