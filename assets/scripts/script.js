@@ -5,11 +5,27 @@ function Book(title, author, year, status = false) {
   this.year = year;
   this.status = status;
 }
-function bookStatus(book) {
-  return book.status === true ? 'Read Already' : 'Not yet';
+function getSavedLibrary() {
+  const libraryJSON = localStorage.getItem('library');
+
+  try {
+    return libraryJSON ? JSON.parse(libraryJSON) : [];
+  } catch (error) {
+    return [];
+  }
+}
+function addBookToLocalStorage(library) {
+  localStorage.setItem('library', JSON.stringify(library));
+}
+
+function removeBook(library, index) {
+  library.splice(index, 1);
 }
 function changeStatus(index, library) {
   library[index].status = !library[index].status;
+}
+function bookStatus(book) {
+  return book.status === true ? 'Read Already' : 'Not yet';
 }
 function displayBooks(library) {
   const books = document.getElementById('books_body');
@@ -28,51 +44,39 @@ function displayBooks(library) {
   });
 
   // WHEN EACH REMOVE BUTTON IS CLICKED
-  const rmBtns = document.querySelectorAll('.remove-btn');
-  rmBtns.forEach(btn => {
+  document.querySelectorAll('.remove-btn').forEach(btn => {
     btn.addEventListener('click', e => {
-      library.splice(e.target.getAttribute('data-target'), 1);
+      removeBook(library, e.target.getAttribute('data-target'));
+      addBookToLocalStorage(library);
       displayBooks(library);
     });
   });
 
   // WHEN EACH SWICTH BUTTON IS CLICKED
-  const swBtns = document.querySelectorAll('.swicth-btn');
-  swBtns.forEach(btn => {
+  document.querySelectorAll('.swicth-btn').forEach(btn => {
     btn.addEventListener('click', e => {
       changeStatus(e.target.getAttribute('data-target'), library);
+      addBookToLocalStorage(library);
       displayBooks(library);
     });
   });
 }
 
-function addBookToLibrary(book, library) {
-  library.push(book);
-}
-
 //  RUNNING =======================================
 
 // ARRAY FOR LIBRARY
-const myLibrary = [];
+const myLibrary = getSavedLibrary();
 
 // RUN
 displayBooks(myLibrary);
 
-// GET ELEMENTS FROM HTML
-const form = document.querySelector('#add_form');
-const titleInput = document.getElementById('title');
-const authorInput = document.getElementById('author');
-const yearInput = document.getElementById('year');
-const statusInput = document.getElementById('status');
-const newBookBtn = document.querySelector('#new_book');
-
 // TOGGLE BUTTON FOR FORM
-newBookBtn.addEventListener('click', () => {
-  form.classList.toggle('open');
+document.querySelector('#new_book').addEventListener('click', () => {
+  document.querySelector('#add_form').classList.toggle('open');
 });
 
 // FORM SUBMISSION
-form.addEventListener('submit', e => {
+document.querySelector('#add_form').addEventListener('submit', e => {
   e.preventDefault();
   const title = e.target.elements.title.value;
   const author = e.target.elements.author.value;
@@ -80,11 +84,12 @@ form.addEventListener('submit', e => {
   const status = e.target.elements.status.checked;
 
   const newBook = new Book(title, author, year, status);
-  addBookToLibrary(newBook, myLibrary);
+  myLibrary.push(newBook);
+  addBookToLocalStorage(myLibrary);
   displayBooks(myLibrary);
 
-  titleInput.value = '';
-  authorInput.value = '';
-  yearInput.value = '';
-  statusInput.checked = false;
+  document.getElementById('title').value = '';
+  document.getElementById('author').value = '';
+  document.getElementById('year').value = '';
+  document.getElementById('status').checked = false;
 });
