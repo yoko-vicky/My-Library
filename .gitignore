@@ -33,3 +33,4 @@ node_modules/
 .env
 /memo
 prepros-6.config
+package-lock.json
