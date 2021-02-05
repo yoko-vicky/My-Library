@@ -1,5 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
-# PROJECTTITLE
+# My Library
+![Top Page Screenshot](./screenshot.png)
 
 ## About the Project
 
@@ -17,7 +18,7 @@ A list of commonly used resources that I find helpful is listed in the acknowled
 
 ## Live Demo
 
-[Live Demo Link](https://yocosaka-my-library.netlify.app/)
+[Live Demo Link](https://yokosaka-mv-libray.netlify.app/)
 
 
 ## Getting Started

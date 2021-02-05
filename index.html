@@ -9,23 +9,23 @@
 </head>
 <body>
   <div class="container">
+    <img src="./assets/images/book.svg" alt="book image" class="book-image">
     <h1>My Library</h1>
 
     <table class="books">
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Author</th>
-          <th>Published year</th>
-          <th>Read status</th>
-          <th>remove</th>
+      <thead class="books__thead">
+        <tr class="books__tr">
+          <th class="books__th">Title</th>
+          <th class="books__th">Author</th>
+          <th class="books__th">Published year</th>
+          <th class="books__th">Read status</th>
+          <th class="books__th">remove</th>
         </tr>
       </thead>
-      <tbody id="books_body">
-      </tbody>
+      <tbody id="books_body" class="books__tbody"></tbody>
     </table>
 
-    <button id="new_book">New Book</button>
+    <button id="new_book" class="btn btn__standout">New Book</button>
 
     <form id="add_form" class="form">
       <div class="form__field">
@@ -48,7 +48,7 @@
         <input type="checkbox" name="status" id="status">
       </div>
 
-      <button type="submit">Add to Library</button>
+      <button type="submit" class="btn btn__add">Add to Library</button>
     </form>
 
   </div>

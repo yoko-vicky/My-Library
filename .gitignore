@@ -34,3 +34,4 @@ node_modules/
 /memo
 prepros-6.config
 package-lock.json
+assets/styles/scss
